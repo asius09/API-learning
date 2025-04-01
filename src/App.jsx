@@ -14,7 +14,15 @@ function App() {
         const url = `https://jsonplaceholder.typicode.com/posts/1`;
         const response = await myFetchApi({
           url: url,
+          method: "PUT",
+          data: {
+            id: 1,
+            title: "foo",
+            body: "bar",
+            userId: 1,
+          },
         });
+        console.table("response", response);
         console.log("fetched Data", response.data);
         setData(response.data);
       } catch (error) {
